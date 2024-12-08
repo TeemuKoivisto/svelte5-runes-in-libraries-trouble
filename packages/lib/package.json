@@ -1,0 +1,31 @@
+{
+  "name": "@/lib",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.svelte.js",
+  "module": "dist/index.svelte.js",
+  "type": "module",
+  "types": "dist/index.svelte.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.svelte.js",
+      "require": "./dist/index.svelte.js",
+      "svelte": "./dist/index.svelte.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "watch": "rimraf dist && vite build --watch"
+  },
+  "devDependencies": {
+    "svelte": "^5.8.1"
+  },
+  "peerDependencies": {
+    "svelte": ">=5"
+  }
+}

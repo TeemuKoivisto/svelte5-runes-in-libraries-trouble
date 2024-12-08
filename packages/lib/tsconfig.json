@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "declarationDir": "./dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
