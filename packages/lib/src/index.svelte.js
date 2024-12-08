@@ -1,21 +1,17 @@
 import { mount, unmount } from 'svelte'
 
 export class SvelteWrapper {
-  wrapper
+  dom
   component
   mounted
   props = $state({
     name: 'component',
     time: Date.now()
   })
-  dom
 
   constructor(dom, component) {
-    this.component = component
     this.dom = dom
-    this.wrapper = document.createElement('div')
-    this.wrapper.className = '.wrapper'
-    dom.appendChild(this.wrapper)
+    this.component = component
   }
 
   update(time) {
@@ -24,7 +20,7 @@ export class SvelteWrapper {
       // this.mounted.$set(this.props)
     } else if (this.component) {
       this.mounted = mount(this.component, {
-        target: this.wrapper,
+        target: this.dom,
         props: this.props
       })
     }
@@ -32,6 +28,5 @@ export class SvelteWrapper {
 
   destroy() {
     this.mounted && unmount(this.mounted)
-    this.wrapper.remove()
   }
 }

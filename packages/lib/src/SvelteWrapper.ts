@@ -8,21 +8,17 @@ interface Props {
 export type RenderedComponent = Component<Props>
 
 export class SvelteWrapper {
-  wrapper: HTMLDivElement
+  dom: HTMLElement
   component?: RenderedComponent
   mounted?: {}
   props: Props = $state({
     name: 'component',
     time: Date.now()
   })
-  dom: HTMLElement
 
   constructor(dom: HTMLElement, component?: RenderedComponent) {
-    this.component = component
     this.dom = dom
-    this.wrapper = document.createElement('div')
-    this.wrapper.className = '.wrapper'
-    dom.appendChild(this.wrapper)
+    this.component = component
   }
 
   update(time: number) {
@@ -31,7 +27,7 @@ export class SvelteWrapper {
       // this.mounted.$set(this.props)
     } else if (this.component) {
       this.mounted = mount(this.component, {
-        target: this.wrapper,
+        target: this.dom,
         props: this.props
       })
     }
@@ -39,6 +35,5 @@ export class SvelteWrapper {
 
   destroy() {
     this.mounted && unmount(this.mounted)
-    this.wrapper.remove()
   }
 }
