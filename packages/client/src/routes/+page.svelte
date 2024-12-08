@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  import { SvelteWrapper } from '@/lib'
+  // import { SvelteWrapper } from '@/lib'
+  import { SvelteWrapper } from '@/pkg'
   import Component from './Component.svelte'
 
   let mounted: SvelteWrapper | undefined

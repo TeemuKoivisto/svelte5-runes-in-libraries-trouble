@@ -32,5 +32,3 @@ tmp/
 
 # Svelte
 .svelte-kit
-**/package
-**/pkg

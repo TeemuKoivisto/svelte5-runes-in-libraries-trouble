@@ -1,0 +1,33 @@
+{
+  "name": "@/pkg",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.svelte.js",
+  "module": "dist/index.svelte.js",
+  "type": "module",
+  "types": "dist/index.svelte.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.svelte.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "svelte-package",
+    "watch": "svelte-package --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "^2.3.7",
+    "@sveltejs/vite-plugin-svelte": "^5.0.1",
+    "sass": "^1.82.0",
+    "svelte": "^5.8.1",
+    "svelte-preprocess": "^6.0.3"
+  },
+  "peerDependencies": {
+    "svelte": ">=5"
+  }
+}
