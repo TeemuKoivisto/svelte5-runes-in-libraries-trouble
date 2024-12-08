@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2020",
     "lib": ["esnext", "dom", "dom.iterable"],
     "moduleResolution": "bundler",
     "declaration": true,
