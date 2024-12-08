@@ -1,23 +1,16 @@
-import { mount, unmount, type Component } from 'svelte'
-
-interface Props {
-  name: string
-  time: number
-}
-
-export type RenderedComponent = Component<Props>
+import { mount, unmount } from 'svelte'
 
 export class SvelteWrapper {
-  wrapper: HTMLDivElement
-  component?: RenderedComponent
-  mounted?: {}
-  props: Props = $state({
+  wrapper
+  component
+  mounted
+  props = $state({
     name: 'component',
     time: Date.now()
   })
-  dom: HTMLElement
+  dom
 
-  constructor(dom: HTMLElement, component?: RenderedComponent) {
+  constructor(dom, component) {
     this.component = component
     this.dom = dom
     this.wrapper = document.createElement('div')
@@ -25,7 +18,7 @@ export class SvelteWrapper {
     dom.appendChild(this.wrapper)
   }
 
-  update(time: number) {
+  update(time) {
     this.props.time = time
     if (this.mounted) {
       // this.mounted.$set(this.props)
