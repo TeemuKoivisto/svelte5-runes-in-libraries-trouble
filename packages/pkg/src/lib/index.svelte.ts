@@ -1,6 +1,6 @@
 import { mount, unmount, type Component } from 'svelte'
 
-interface Props {
+export interface Props {
   name: string
   time: number
 }
