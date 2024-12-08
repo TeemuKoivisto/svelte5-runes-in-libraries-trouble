@@ -6,7 +6,7 @@
 
   let mounted: SvelteWrapper | undefined
 
-  $effect(() => {
+  onMount(() => {
     const int = setInterval(() => {
       mounted?.update(Date.now())
     }, 500)
@@ -20,18 +20,14 @@
   }
 </script>
 
-<header>
-  <h1
-    class="mt-12 px-2 mb-4 md:mt-16 font-cursive text-4xl md:text-7xl tracking-tight flex items-center justify-between"
-  >
-    App
-  </h1>
-</header>
+<main class="max-w-[800px] mx-auto">
+  <header>
+    <h1 class="mt-12 mb-4 text-4xl font-semibold">svelte5-runes-in-libraries-trouble</h1>
+  </header>
 
-<section class="px-4">
   <h2>Mount</h2>
   <div class="flex" use:run_mount></div>
-</section>
+</main>
 
 <style lang="postcss">
 </style>

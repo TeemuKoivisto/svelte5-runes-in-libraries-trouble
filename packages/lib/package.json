@@ -9,9 +9,7 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.svelte.js",
-      "require": "./dist/index.svelte.js",
-      "svelte": "./dist/index.svelte.js"
+      "import": "./dist/index.svelte.js"
     }
   },
   "files": [
